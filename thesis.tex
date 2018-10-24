@@ -1,0 +1,33 @@
+\documentclass{SPhdThesis}
+
+% PDF and title properties.
+\SgSetTitle{[To be amended]PhD Mathematical Biology: CHASTE}
+\SgSetAuthor{Jonathan Miller}
+\SgSetAuthorDegrees{BSc Mathematics and Statistics Honours}
+\SgSetYear{2018}
+\SgSetDegree{Doctor of Philosophy in Applied Mathematics}
+\SgSetDepartment{School of Science and Engineering}
+\SgSetUniversity{The University of Dundee}
+\SgSetDeclarationDate{June 2021}
+
+% The document.
+\begin{document}
+	\begin{frontmatter}
+		\SgAddTitle%
+		\SgAddDeclaration%
+		\input{acknowledgments}%
+		\input{abstract}%
+		\SgAddToc%  Table of contents.
+		\SgAddLof%  List of figures.
+		\SgAddLot%  List of tables.
+		\SgAddLoa%  List of algorithms.
+	\end{frontmatter}
+   
+	\input{chapter01}
+	\input{chapter02}
+	\input{chapter03}
+	\input{chapter04}
+	\input{chapter05}
+	\input{chapter06}
+	\SgIncludeBib{biblio}
+\end{document}

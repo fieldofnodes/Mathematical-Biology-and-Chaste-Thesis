@@ -1,0 +1,89 @@
+\chapter{Mathematical Models in Microbiology}
+\section{Experimental Microbiologist}
+\subsection{Results that need to be modelled}
+\section{Development of model}
+\section{Type \texorpdfstring{$6 $}{Lg} secretion}
+\section{Attractive Ends Capsule Force}
+\subsection{Shortest vector between two finite segments}
+We consider two lines in $\mathbb{R}^3$ or $\mathbb{R}^2$ where lines are written in parametric form as
+\begin{align}
+    P(s) &= P_0+s(P_1-P_0) = P_0 + s\mathbf{u} \\
+    Q(t) &= Q_0+t(Q_1-Q_0) = Q_0 + t\mathbf{v} \\
+\end{align}
+Let $w(s,t)= P(s)-Q(t)$ and $w(s_c,t_c)=P(s_c)-Q(t_C) = \min \left[ P(s)-Q(t) \right]$. If these lines are not perpendicular and not parallel then the segment $P_cQ_c$ will be simultaneously perpendicular to both lines $P(s)$ and $Q(t)$. Hence $\mathbf{u}\cdot w_c = 0$ and $\mathbf{v}\cdot w_c = 0$. Then $\mathbf{w_c} = P(s)-Q(t)=\mathbf{w}_0+s_c\mathbf{u}-t_c\mathbf{v}$. 
+\begin{align}
+    (\mathbf{u}\cdot\mathbf{u})s_c-(\mathbf{u}\cdot\mathbf{v})t_c &= -(\mathbf{u}\cdot\mathbf{w_0}) \\
+    (\mathbf{v}\cdot\mathbf{u})s_c-(\mathbf{v}\cdot\mathbf{v})t_c &= -(\mathbf{v}\cdot\mathbf{w_0})
+\end{align}
+Fort simplicity let 
+\begin{align}
+    a & = \mathbf{u}\cdot\mathbf{u} \\
+    b & = \mathbf{u}\cdot\mathbf{v} \\
+    c & = \mathbf{v}\cdot\mathbf{v} \\
+    d & = \mathbf{u}\cdot\mathbf{w_0} \\
+    e & = \mathbf{v}\cdot\mathbf{w_0} \\
+\end{align}
+Solving for $s_c$ and $t_c$
+\begin{align}
+    s_c = \frac{be-cd}{ac-b^2} \quad t_c = \frac{ae-bd}{ac-b^2} 
+\end{align}
+When the two lines are not parallel nor the same line $ac-b^2 = \left(|\mathbf{u}||\mathbf{v}|\cos\theta\right)^2 = \left(|\mathbf{u}||\mathbf{v}|\sin\theta\right)^2 \geq 0$. Otherwise $ac-b^2=0$, the equations are dependent, the two lines are parallel and the distance will be constant. For parallel lines, set either $s_c$ or $t_c$ to zero and solve for the alternate, in this case take $s_c=0$, then $t_c = \frac{d}{b}=\frac{e}{c}$. 
+
+Solve $s_c$ and $t_c$ and hence, $P(c)$ and $Q(c)$ are solved by extension, giving the distance, $D$ between the two lines, call them $L_1$ and $L_2$ so that
+\begin{align}
+    d(L_1,L_2) = d(w(s_t,t_c))      & = \left | P(s_c)-Q(t_c) \right | \\
+                                    & = \left | (P_0-Q_0)+\frac{(be-cd)\mathbf{u}-(ae-bd)\mathbf{v}}{ac-b^2} \right| \\
+                    \mathbf{w_N}    & = \frac{w(s_t,t_c)}{d(L_1,L_2}            
+\end{align}
+With the vector $\mathbf{w_N}$ is the normalised direction vector of the shortest distance between two segments.
+\subsection{Calculating Force}
+This is a problem of overlapping spheres. Where the shortest distance between two spheres is the distance from the centre of each sphere. 
+Where $O$ is the overlap of two capsules, $A,B$ is the labelling or each capsule and $r$ is the radius, and $d_s$ is the shortest distance between two capsules. 
+\begin{align}
+    r_E & = 2\frac{r_Ar_B}{r_A + r_B} \quad r_A = r_B = \frac{1}{2} \\
+    & = 2\cdot\frac{\frac{1}{2}\cdot\frac{1}{2}}{\frac{1}{2}+\frac{1}{2}} = \frac{1}{2}
+\end{align}
+Where $r_E$ is the effective radius. These functions are applied to both in $\mathbb{R}^2$ and $\mathbb{R}^3$. Young's modulus is used to utilise the elasticity of the capsules, this will be denoted by $E_{cell}$ and the overall scalar value of the adhesive force as $F_a$.
+Overlap of capsule
+\begin{align}
+    O & = r_A+r_B-d_s \\
+    & = \frac{1}{2} + \frac{1}{2} - 0.9 = 0.1 
+\end{align}
+Young's modulus is set at $100$.
+\begin{align}
+    F_a & = -\frac{2}{3}E_{cell}O^{3/2}\sqrt{r_E} \\
+    & = -\frac{2}{3} \cdot 100 \cdot 0.1^{3/2}  \cdot \sqrt{\frac{1}{2}} \\
+    & = -1.490712
+\end{align}
+\subsection{Directional Force}
+Let $\mathbf{w_N}$ be as defined in \textbf{5.15} and $F_a$ be as defined in \textbf{5.20}, then the directional force from capsule $A \rightarrow B$ and capsule $B \rightarrow A$ is defined as 
+\begin{align}
+    \mathbf{F_{A\rightarrow B}} & = F_a\mathbf{w_N}\\
+    \mathbf{F_{B\rightarrow A}} & = -F_a\mathbf{w_N}
+\end{align}
+\subsection{Calculating Torque}
+The cross product, where $v_i,u_j\in\mathbb{R}^2$, $i,j\in [0,1]$ , and the cross product, is determined by
+\begin{align}
+     & \mathbf{u}\times \mathbf{v} \\
+     &  u_0v_1 - u_1v_0 \\
+\end{align}
+In $v_i,u_j\in\mathbb{R}^3$ where $i,j\in [0,1,2]$ the cross product, is determined by
+\begin{align}
+     &  \mathbf{u}\times \mathbf{v} \\
+     &  u_1v_2-u_2v_1 \\
+     &  u_2v_0-u_0v_2 \\
+     &  u_0v_1-u_1v_0 \\
+\end{align}
+It will be clear from the context that $\tau$ will be in $\mathbb{R}^2$ or $\mathbb{R}^3$ from the context. The modelling technique uses rods and spheres. When the shortest vector is determined, this is the location of the sphere and a distance from the centre of said sphere to the centre of the rod is immediate available. This distance as displayed in polar or spherical coordinate is used to calculate the cross product of the torque vector and the force vector. The torques vectors are determined as follows. Let $c_a$ and $c_b$, where $a$ and $b$ are the points comprising $\mathbf{w}$ be the distances from the centre of each rod to the centre of each sphere. Then 
+\begin{align}
+    \mathbf{\tau}\in\mathbb{R}^2 :=  &   \\
+                            &   (c_a\cos\theta_a,c_a\sin\theta_a)\>\cap\>(c_b\cos\theta_b,c_b\sin\theta_b) \\
+    \mathbf{\tau}\in\mathbb{R}^3 :=  &   (c_a\cos\theta_a\sin\phi_a,c_a\sin\theta_a\sin\phi_a,c_a\cos\phi_a)\>\cap\> \\
+                            &   (c_b\cos\theta_b\sin\phi_b,c_b\sin\theta_b\sin\phi_b,c_b\cos\phi_b)
+\end{align}
+Then to determine the force and torque interaction, we use either \textbf{5.25} or \textbf{5.28} such that
+\begin{align}
+    \mathbf{u}\times\mathbf{v}  & = \mathbf{\tau}\times \mathbf{F_{A\rightarrow B}} \\
+                                & = \mathbf{\tau}\times \mathbf{F_{B\rightarrow A}} \\
+\end{align}
+This force is then applied to the interacting cells.

@@ -1,0 +1,38 @@
+\begin{abstract}
+Cell-based biological experiments and findings are increasingly reliant on computers to decipher the results. There has been an explosion of available data and as a result the ability to derive meaning and insight without the aid of a computer seems to be inversely proportional to the amount of data obtained. Hence, there there is a need for practical and computationally based models to aid in our investigative abilities as mathematicians and scientists in understanding the current findings of today's experiments. As a result, this thesis has been couched in the aim of developing such models for various areas of biological sciences.  Chaste (Cancer, Heart and Soft Tissue Environment) was the foundation of development.
+
+\section{Chaste}
+Cancer, Heart and Soft Tissue Environment, or Chaste is a general purpose simulation package. The goal of Chaste is to tackle and solve multi-scale, computationally demanding problems. As mentioned previously, there is an explosion of data and as such there are a number of problems arising in biology and physiology. Chaste was primarily developed at the University of Oxford,  but as it is an open source software, users have spread to outside of the university. The development of new packages draws on expertise from software engineering, high performance computing, mathematical modelling and scientific computing. There are two main areas of development in Chaste
+\begin{enumerate}
+    \item Continuum modelling of cardiac electrophysiology (Cardiac Chaste)
+    \item Individual-based modelling of cell populations
+\end{enumerate}
+Chaste is mostly written in C$++$, it has a mature code base, a large active development team and a well commented source code. 
+
+\subsection{Cell-based Chaste}
+This area of chaste looks at modelling populations. Biological systems are growing in complexity resulting in mathematical models also growing in complexity. Models in these areas have a wide span. A model can detail molecular level processes and range to models at the tissue level. The aim in Cell-based chaste is close the gap in these areas with a single generic modelling framework. 
+
+\subsubsection{Implementation}
+Cell-based Chaste employs three interlinked models.
+\begin{enumerate}
+    \item A model of cellular behaviour (for example, progress through the cell cycle, or programmed cell death)
+    \item A model of the movement and mechanical interaction between cells
+    \item A model of the transport of key nutrients, signalling molecules or waste products
+\end{enumerate}
+Cell-based models that are sub-cellular can have either deterministic behaviour or stochastic. There can be a range of simple rule based models up to highly complex models that require non-linear ordinary differential equations. There are a variety of ways in which Chaste frameworks can describe the mechanics of cell interaction aggregates. The current frameworks used in modelling are as follows.
+
+\begin{enumerate}
+    \item Lattice-based approaches
+    \begin{enumerate}
+        \item Cellular automata
+        \item Cellular Potts model
+    \end{enumerate} 
+    \item Lattice-free models with centre-based models with connectivity defined either with 
+    \begin{enumerate}
+        \item Voronoi tessellation
+        \item Overlapping spheres
+    \end{enumerate}
+    \item Vertex-based models
+\end{enumerate}
+
+\end{abstract}
